@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.shashwat.hibernate.sample.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.shashwat.hibernate.sample.Perspective"
+            id="com.shashwat.hibernate.sample.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.shashwat.hibernate.sample.application"
+            name="Hello RCP">
+         <property
+               name="windowImages"
+               value="icons/alt_window16.gif,icons/alt_window32.gif">
+         </property>
+         <property
+               name="appName"
+               value="Hello RCP">
+         </property>
+         <property
+               name="aboutText"
+               value="Copyright Shashwat">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.shashwat.hibernate.sample.editor.UserEditor"
+            default="false"
+            id="com.shashwat.hibernate.sample.editor.UserEditor"
+            name="User Editor">
+      </editor>
+   </extension>
+
+</plugin>
